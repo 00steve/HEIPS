@@ -12,22 +12,13 @@ int x = 0;
 
 class HEIPS {
 public:
-	HEIPS() :
-		fileName(""),
-		fileName_cstr(NULL),
-		gdiImage(NULL),
-		validImage(false){
-	}
 
-	~HEIPS() {
-		delete fileName_cstr;
-		delete gdiImage;
-	}
-
+	HEIPS();
+	~HEIPS();
 
 	string fileName;
 	const char* fileName_cstr;
-	Gdiplus::Image* gdiImage;
+	Gdiplus::Bitmap* gdiBitmap;
 	bool validImage;
 };
 
@@ -37,6 +28,7 @@ HEIPS heips;
 
 
 extern "C" {
+	__declspec(dllexport) const char* HEIPSGetImageData();
 	__declspec(dllexport) const char* HEIPSImageFileName();
 	__declspec(dllexport) unsigned int HEIPSImageHeight();
 	__declspec(dllexport) bool HEIPSImageLoaded();

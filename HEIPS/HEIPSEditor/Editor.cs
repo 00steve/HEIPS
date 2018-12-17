@@ -30,7 +30,9 @@ namespace WindowsFormsApp1
             Debug.WriteLine("---GOOD LOAD-----");
             Debug.WriteLine("load image " + n);
             Debug.WriteLine("load image successful : " + imageLoaded.ToString());
-            Debug.WriteLine(" - size : " + imageHeight.ToString() + " x " + imageWidth.ToString());
+            Debug.WriteLine(" - size : " + imageWidth.ToString() + " x " + imageHeight.ToString());
+
+            //Debug.WriteLine(" - data : " + h.GetImageData());
 
             n = "mr.jobs";
             loaded = h.Load(n);
@@ -41,7 +43,7 @@ namespace WindowsFormsApp1
             Debug.WriteLine("---FAILURE LOAD-----");
             Debug.WriteLine("load image " + n);
             Debug.WriteLine("load image successful : " + imageLoaded.ToString());
-            Debug.WriteLine(" - size : " + imageHeight.ToString() + " x " + imageWidth.ToString());
+            Debug.WriteLine(" - size : " + imageWidth.ToString() + " x " + imageHeight.ToString());
 
 
 

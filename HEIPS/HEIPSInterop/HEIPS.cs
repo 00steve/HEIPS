@@ -6,6 +6,16 @@ namespace HEIPSInterop
     {
 
 
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSGetImageData")]
+        [return: MarshalAs(UnmanagedType.LPStr)]
+        static extern string HEIPSGetImageData();
+        public string GetImageData()
+        {
+            return HEIPSGetImageData();
+        }
+
+
+
         [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageFileName")]
         [return: MarshalAs(UnmanagedType.LPStr)]
         static extern string HEIPSImageFileName();
