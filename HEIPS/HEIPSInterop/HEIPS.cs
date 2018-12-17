@@ -14,12 +14,32 @@ namespace HEIPSInterop
             return HEIPSImageFileName();
         }
 
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageHeight")]
+        static extern int HEIPSImageHeight();
+        public int ImageHeight()
+        {
+            return HEIPSImageHeight();
+        }
+
+
+
+
         [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageLoaded")]
         static extern bool HEIPSImageLoaded();
         public bool ImageLoaded()
         {
             return HEIPSImageLoaded();
         }
+
+
+
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageWidth")]
+        static extern int HEIPSImageWidth();
+        public int ImageWidth()
+        {
+            return HEIPSImageWidth();
+        }
+
 
 
         [DllImport("HEIPS.dll", EntryPoint = "HEIPSLoad")]
@@ -31,12 +51,7 @@ namespace HEIPSInterop
 
     
 
-        [DllImport("HEIPS.dll", EntryPoint = "HEIPSStringLength")]
-        static extern int HEIPSStringLength(string path);
-        public int StringLength(string path)
-        {
-            return HEIPSStringLength(path);
-        }
+     
 
     }
 }

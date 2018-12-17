@@ -10,12 +10,18 @@ using namespace std;
 int x = 0;
 
 
-class Data{
+class HEIPS {
 public:
-	Data() :
+	HEIPS() :
 		fileName(""),
+		fileName_cstr(NULL),
 		gdiImage(NULL),
 		validImage(false){
+	}
+
+	~HEIPS() {
+		delete fileName_cstr;
+		delete gdiImage;
 	}
 
 
@@ -25,12 +31,15 @@ public:
 	bool validImage;
 };
 
-Data heips;
+HEIPS heips;
+
+
 
 
 extern "C" {
 	__declspec(dllexport) const char* HEIPSImageFileName();
+	__declspec(dllexport) unsigned int HEIPSImageHeight();
 	__declspec(dllexport) bool HEIPSImageLoaded();
+	__declspec(dllexport) unsigned int HEIPSImageWidth();
 	__declspec(dllexport) bool HEIPSLoad(char* path);
-	__declspec(dllexport) int HEIPSStringLength(char* path);
 }
