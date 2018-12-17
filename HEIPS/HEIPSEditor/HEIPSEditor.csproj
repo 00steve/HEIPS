@@ -78,5 +78,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HEIPSInterop\HEIPSInterop.csproj">
+      <Project>{5031fedf-9bb0-49e1-b39e-f12b2243cfb8}</Project>
+      <Name>HEIPSInterop</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

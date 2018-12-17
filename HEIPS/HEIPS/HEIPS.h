@@ -1,14 +1,34 @@
 #pragma once
-
 #include "stdafx.h"
-#include "stdio.h"
+
+#include <windows.h> 
+#include <gdiplus.h>
 #include <string>
 
 using namespace std;
 
+int x = 0;
 
 
-extern "C" __declspec(dllexport) bool HEIPSLoad(char* path);
+class Data{
+public:
+	Data() :
+		fileName(""),
+		gdiImage(NULL),
+		validImage(false){
+	}
 
 
-extern "C" __declspec(dllexport) int HEIPSs(char* path);
+	string fileName;
+	Gdiplus::Image* gdiImage;
+	bool validImage;
+};
+
+Data heips;
+
+
+extern "C" {
+	__declspec(dllexport) char* HEIPSImageFileName();
+	__declspec(dllexport) bool HEIPSLoad(char* path);
+	__declspec(dllexport) int HEIPSStringLength(char* path);
+}
