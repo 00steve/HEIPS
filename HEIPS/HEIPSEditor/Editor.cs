@@ -32,7 +32,8 @@ namespace WindowsFormsApp1
             Debug.WriteLine("load image successful : " + imageLoaded.ToString());
             Debug.WriteLine(" - size : " + imageWidth.ToString() + " x " + imageHeight.ToString());
 
-            //Debug.WriteLine(" - data : " + h.GetImageData());
+            string r = h.GetImageData();
+            Debug.WriteLine(" - data : " + r);
 
             n = "mr.jobs";
             loaded = h.Load(n);
