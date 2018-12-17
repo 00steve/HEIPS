@@ -19,17 +19,14 @@ namespace WindowsFormsApp1
 
         private void loadImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string n = "mr2.jg";
-
+            string n = "mr2.jpg";
 
             HEIPS h = new HEIPS();
             bool loaded = h.Load(n);
-            
             Debug.WriteLine("load image " + n);
 
-            //string loadedFile = h.ImageFileName();
-            //Debug.WriteLine("loaded image : " + loadedFile);
-            
+            bool imageLoaded = h.ImageLoaded();
+            Debug.WriteLine("load image successful : " + imageLoaded.ToString());
 
 
 

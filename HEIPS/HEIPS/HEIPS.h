@@ -20,6 +20,7 @@ public:
 
 
 	string fileName;
+	const char* fileName_cstr;
 	Gdiplus::Image* gdiImage;
 	bool validImage;
 };
@@ -28,7 +29,8 @@ Data heips;
 
 
 extern "C" {
-	__declspec(dllexport) char* HEIPSImageFileName();
+	__declspec(dllexport) const char* HEIPSImageFileName();
+	__declspec(dllexport) bool HEIPSImageLoaded();
 	__declspec(dllexport) bool HEIPSLoad(char* path);
 	__declspec(dllexport) int HEIPSStringLength(char* path);
 }

@@ -6,7 +6,7 @@ namespace HEIPSInterop
     {
 
 
-        [DllImport(@"HEIPS.dll", EntryPoint = "HEIPSImageFileName")]
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageFileName")]
         [return: MarshalAs(UnmanagedType.LPStr)]
         static extern string HEIPSImageFileName();
         public string ImageFileName()
@@ -14,9 +14,15 @@ namespace HEIPSInterop
             return HEIPSImageFileName();
         }
 
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSImageLoaded")]
+        static extern bool HEIPSImageLoaded();
+        public bool ImageLoaded()
+        {
+            return HEIPSImageLoaded();
+        }
 
 
-        [DllImport(@"HEIPS.dll", EntryPoint = "HEIPSLoad")]
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSLoad")]
         static extern bool HEIPSLoad(string path);
         public bool Load(string path)
         {
@@ -25,7 +31,7 @@ namespace HEIPSInterop
 
     
 
-        [DllImport(@"HEIPS.dll", EntryPoint = "HEIPSStringLength")]
+        [DllImport("HEIPS.dll", EntryPoint = "HEIPSStringLength")]
         static extern int HEIPSStringLength(string path);
         public int StringLength(string path)
         {
